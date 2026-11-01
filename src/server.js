@@ -3,7 +3,7 @@ const path = require("path");
 const pool = require("./db");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.port || 3000;
 
 // Allow Express to read JSON request bodies.
 app.use(express.json());
@@ -245,6 +245,6 @@ app.delete(
 );
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running at ${PORT}`);
 });
 
