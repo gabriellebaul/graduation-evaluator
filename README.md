@@ -3,7 +3,7 @@
 This Harry Potter-themed graduation web application helps fictional students evaluate their progress towards completing a specific degree. Students can view the required courses and subsequent prerequisites, check their status of completing the course, and manage their courses as well.
 
 
-# # Project Overview
+## Project Overview
 
 The user begins by entering their Student ID. For ease of use in our case, I have included the list of available students and their corresponding Student IDs. If an invalid ID is entered, whether the student is not in the database or if the format is incorrect, the application displays an error.
 
@@ -14,7 +14,7 @@ The summary also gets updated if the student adds courses they wish to take or d
 This in-depth evaluation table also displays the details of each required course, such as the course code, the full course name, the course credits each course is valued at, and any prerequisites that are required to take this course.
 
 
-# # Technologies Used
+## Technologies Used
 
 | Technology | Purpose |
 |---|---|
@@ -29,7 +29,7 @@ This in-depth evaluation table also displays the details of each required course
 | Git & GitHub | Version control and source code hosting |
 | Render | Live application deployment |
 
-# # Database Design
+## Database Design
 
 ![Database ERD](ERD.jpg)
 
@@ -48,7 +48,7 @@ The application uses six relational database tables:
 
 The database uses primary keys, foreign keys, and constraints to maintain data integrity.
 
-# Course Statuses
+## Course Statuses
 
 Each required course is assigned one of three statuses:
 
@@ -59,6 +59,6 @@ Each required course is assigned one of three statuses:
 The `not_taken` status is calculated by the application rather than stored in the database.
 
 
-# # Live Application is available at:
+## Live Application is available at:
 
 https://graduation-evaluator-qyoc.onrender.com/
