@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: 
+        url('/images/stars.png'),
+        linear-gradient(to bottom, black, #202A44);
+    background-attachment: fixed;
+    background-size: 100%;
+}
+
+.container {
+    padding: 24px;
+    position: fixed;
+    inset: 0;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+
+}
+
+
+header {
+    margin-bottom: 32px;
+    color: white;
+}
+
+header h1 {
+    margin-bottom: 8px;
+    font-size: 2rem;
+}
+
+header p,
+#message {
+    color: #64748b;
+}
+
+.degree-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 450px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+label {
+    font-weight: bold;
+}
+
+.degree-section select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    font-size: 1rem;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.summary-card {
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.summary-card span {
+    display: block;
+    margin-bottom: 10px;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.summary-card strong {
+    font-size: 1.8rem;
+}
+
+.table-wrapper {
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.table-wrapper th{
+    color: #202A44;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+}
+
+th {
+    background: #eef2f7;
+    white-space: nowrap;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.status-completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-in_progress {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-not_taken {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 700px) {
+    .container {
+        margin: 16px auto;
+        padding: 16px;
+    }
+
+    .summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+[hidden] {
+    display: none !important;
+}
+
+#hogwarts-image{
+    position:fixed;
+    bottom:0;
+    display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.add-button,
+.drop-button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.add-button {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.drop-button {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.add-button:hover {
+    background-color: #a7f3d0;
+}
+
+.drop-button:hover {
+    background-color: #fecaca;
+}
+
+.add-button:disabled,
+.drop-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#student-table th,
+#student-table td {
+    background-color: transparent;
+}
+
+#student-id{
+    margin-left: 10%;
+}
+
+#current-student{
+    color: white;
+}

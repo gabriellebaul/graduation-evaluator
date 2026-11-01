@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Evaluator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <div>
+        <header>
+            <h1>Graduation Evaluator</h1>
+        </header>
+
+        <section id="student-section" class="degree-section">
+            <div style="display:flex">
+                <label for="student-id">Enter your student ID:</label>
+                <input type="number" id="student-id" style="display:flex">
+                <button id="continue-button" type="button">Continue</button>
+            </div>
+            <p id="id-message" role="status"></p>
+            <table id="student-table">
+                <thead>
+                    <th>ID</th>
+                    <th>Name</th>
+                </thead>
+                <tbody id="student-table-body"></tbody>
+            </table>
+        </section>
+
+        <h2 id="current-student"></h2>
+        <section id="degree-section" class="degree-section" hidden>
+            <label for="degree-select">Select a degree to view its required courses.</label>
+            <select id="degree-select">
+                <option value="">Loading degrees...</option>
+            </select>
+        </section>
+        
+        <p id="message" role="status"></p>
+
+
+        <section id="evaluation-section" hidden>
+            <h2 id="degree-title">Degree Requirements</h2>
+
+            <div class="summary">
+                <div class="summary-card">
+                    <span>Total required courses</span>
+                    <strong id="total-count">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Completed</span>
+                    <strong id="completed-count">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>In progress</span>
+                    <strong id="progress-count">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Not taken</span>
+                    <strong id="not-taken-count">0</strong>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Credits</th>
+                        <th>Prerequisites</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="evaluation-body"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+<img src="/images/horizons_hogwarts.png" id="hogwarts-image">
+</html>
