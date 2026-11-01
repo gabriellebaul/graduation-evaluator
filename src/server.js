@@ -5,10 +5,7 @@ const pool = require("./db");
 const app = express();
 const PORT = process.env.port || 3000;
 
-// Allow Express to read JSON request bodies.
 app.use(express.json());
-
-// Serve the frontend files from the public folder.
 app.use(express.static(path.join(__dirname, "../public")));
 
 
@@ -183,6 +180,34 @@ app.post("/api/students/:studentId/courses", async (req, res) => {
       });
     }
 
+    // Check prerequisites that the student has NOT completed
+    const missingPrerequisites = await pool.query(
+      `SELECT cp.prerequisite_code
+       FROM course_prerequisites cp
+       WHERE cp.course_code = $1
+       AND NOT EXISTS (
+         SELECT 1
+         FROM student_courses sc
+         WHERE sc.student_id = $2
+         AND sc.course_code = cp.prerequisite_code
+         AND sc.status = 'completed'
+       )
+       ORDER BY cp.prerequisite_code`,
+      [courseCode, studentId]
+    );
+
+    // Stop if any prerequisites are incomplete
+    if (missingPrerequisites.rows.length > 0) {
+      const missingCodes = missingPrerequisites.rows.map(
+        (row) => row.prerequisite_code
+      );
+
+      return res.status(400).json({
+        error: "Course cannot be added. Prerequisite not met:",
+        missingPrerequisites: missingCodes
+      });
+    }
+
     // Add the course as in progress
     const result = await pool.query(
       `INSERT INTO student_courses (student_id, course_code, status)
@@ -207,7 +232,6 @@ app.post("/api/students/:studentId/courses", async (req, res) => {
     res.status(500).json({ error: "Failed to add course." });
   }
 });
-
 app.delete(
   "/api/students/:studentId/courses/:courseCode",
   async (req, res) => {

@@ -286,7 +286,17 @@ evaluationBody.addEventListener("click", async (event) => {
     const result = await response.json();
 
     if (!response.ok) {
-      throw new Error(result.error || "Something went wrong.");
+
+        if (result.missingPrerequisites) {
+            alert(
+                result.error + "\n" +
+                result.missingPrerequisites.join(", ")
+            );
+
+            return;
+        }
+
+        throw new Error(result.error || "Something went wrong.");
     }
 
     message.textContent = result.message;
