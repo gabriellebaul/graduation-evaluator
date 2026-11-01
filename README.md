@@ -1,5 +1,9 @@
 # Graduation Evaluator
 
+## Live Application is available at:
+
+https://graduation-evaluator-qyoc.onrender.com/
+
 This Harry Potter-themed graduation web application helps fictional students evaluate their progress towards completing a specific degree. Students can view the required courses and subsequent prerequisites, check their status of completing the course, and manage their courses as well.
 
 
@@ -59,6 +63,3 @@ Each required course is assigned one of three statuses:
 The `not_taken` status is calculated by the application rather than stored in the database.
 
 
-## Live Application is available at:
-
-https://graduation-evaluator-qyoc.onrender.com/
