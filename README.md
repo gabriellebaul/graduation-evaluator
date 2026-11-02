@@ -39,6 +39,8 @@ This in-depth evaluation table also displays the details of each required course
 
 The application uses a relational PostgreSQL database to manage students, courses, degree requirements, and course prerequisites.
 
+**A script is available under `/database/setup.sql` if you wish to recreate the database. The database is also hosted on Neon for the live website.**
+
 The application uses six relational database tables:
 
 | Table | Description |
